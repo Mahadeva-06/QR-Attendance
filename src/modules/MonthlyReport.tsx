@@ -14,9 +14,9 @@ interface MonthlyReportProps {
   selectedBatch?: { name: string; code: string } | null;
 }
 
-export function MonthlyReport({ searchQuery = '', selectedBatch }: MonthlyReportProps = {}) {
+export function MonthlyReport({ searchQuery = '', selectedBatch: _selectedBatch }: MonthlyReportProps = {}) {
   const [selectedMonth, setSelectedMonth] = useState('2018-12');
-  const [currentDate] = useState(new Date(2018, 11, 6)); // December 2018
+  const [localSearchQuery, setLocalSearchQuery] = useState(searchQuery);
 
   const daysInMonth = 31;
   const students = [
@@ -69,8 +69,8 @@ export function MonthlyReport({ searchQuery = '', selectedBatch }: MonthlyReport
 
   const filteredStudents = students.filter(
     (student) =>
-      student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      student.code.toLowerCase().includes(searchQuery.toLowerCase())
+      student.name.toLowerCase().includes(localSearchQuery.toLowerCase()) ||
+      student.code.toLowerCase().includes(localSearchQuery.toLowerCase())
   );
 
   return (
@@ -83,8 +83,8 @@ export function MonthlyReport({ searchQuery = '', selectedBatch }: MonthlyReport
             <input
               type="text"
               placeholder="Search students by name or code"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={localSearchQuery}
+              onChange={(e) => setLocalSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
             />
           </div>
