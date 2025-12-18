@@ -53,26 +53,7 @@ npm run dev
 
 ### **Step 2: Navigate Using Sidebar**
 - Click menu items in the left sidebar to switch between modules
-- Current module displays in the main content area
-
-### **Step 3: Develop a Single Module**
-
-To focus on developing **one module at a time**:
-
-1. Open `src/App.tsx`
-2. Change the default page to test your module:
-   ```tsx
-   const [activePage, setActivePage] = useState('daily-attendance'); // Change this
-   ```
-
-3. Or temporarily render only your module in App.tsx:
-   ```tsx
-   export default function App() {
-     return <YourModuleName />;  // Test single module
-   }
-   ```
-
----
+- Current module displays in the main content are
 
 ## 📋 Available Modules
 
