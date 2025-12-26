@@ -147,10 +147,4 @@ For issues or questions, refer to:
 - Tailwind CSS: https://tailwindcss.com
 - Vite: https://vitejs.dev
 
----
-
-## 📜 License
-
-This project was exported from Figma and uses components from [shadcn/ui](https://ui.shadcn.com/) under MIT license.
-
 **Happy Coding! 🚀**
